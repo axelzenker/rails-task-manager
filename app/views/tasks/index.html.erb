@@ -1,0 +1,11 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <input type="checkbox" <%= "checked".html_safe if task.completed %>>
+      <%= link_to task.title, task_path(task) %>
+      <%= link_to "🖊️", edit_task_path(task) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "+ Add a Task", new_task_path %>
